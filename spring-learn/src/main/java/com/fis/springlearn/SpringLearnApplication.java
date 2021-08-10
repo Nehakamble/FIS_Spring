@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.fis.springlearn.bean.employee;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,9 +25,17 @@ public class SpringLearnApplication {
 //		displayDate();
 //		displayCountry();
 //		displayCountry();
-		displayCountries();
+//		displayCountries();
+		displayEmployee();
 
 }
+	static void displayEmployee() {
+		LOGGER.info("START");
+		ApplicationContext context = new ClassPathXmlApplicationContext("employee.xml");
+		employee employee = context.getBean("employee", employee.class);
+		LOGGER.debug("Employee : {}", employee);
+		LOGGER.info("END");
+	}
 	static void displayCountries() {
 			LOGGER.info("START");
 			ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
