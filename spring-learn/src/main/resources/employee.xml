@@ -6,7 +6,7 @@
 
 	<bean id="employee" class="com.fis.springlearn.bean.employee">
 		<property name="id" value="10"></property>
-		<property name="name" value="Swetha"></property>
+		<property name="name" value="neha"></property>
 		<property name="salary" value="1234"></property>
 		<property name="permanent" value="true"></property>
 		<property name="dateOfBirth" value="8/10/2021"></property>
@@ -36,5 +36,17 @@
 	<bean id="skillJs" class="com.fis.springlearn.bean.skill">
 		<property name="id" value="300" />
 		<property name="name" value="js" />
+	</bean>
+	
+	<bean id="dao" class="com.fis.springlearn.dao.EmployeeDao">
+
+	</bean>
+	<bean id="service"
+		class="com.fis.springlearn.services.EmployeeService">
+		<property name="employeeDao" ref="dao"></property>
+	</bean>
+	<bean id="controller"
+		class="com.fis.springlearn.controller.EmployeeController">
+		<property name="employeeService" ref="service"></property>
 	</bean>
 </beans>
