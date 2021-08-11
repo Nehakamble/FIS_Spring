@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface IEmployee {
 
-	public void insertProduct(employee employee);
+	public void insertemployee(employee employee);
 
-	public List<employee> getAllProducts();
+	public List<employee> getAllemployee();
 
 	public void updateemployee(employee employee);
 
